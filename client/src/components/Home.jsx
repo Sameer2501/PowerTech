@@ -5,6 +5,13 @@ import p1 from '../assets/p1.jpeg';
 import h1 from '../assets/h1.jpeg';
 import e1 from '../assets/e1.jpeg';
 import c1 from '../assets/c1.jpeg';
+import cl1 from '../assets/cl1.jpeg';
+import cl2 from '../assets/cl2.jpeg';
+import cl3 from '../assets/cl3.jpeg';
+import cl4 from '../assets/cl4.jpeg';
+import cl5 from '../assets/cl5.jpeg';
+import cl6 from '../assets/cl6.jpeg';
+import cl7 from '../assets/cl7.jpeg';
 const slides = [
   {
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80",
@@ -1147,31 +1154,24 @@ function IndustriesSection() {
 const clientLogos = [
   {
     name: "Yamaha",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG-Yamaha_logo.svg/200px-PNG-Yamaha_logo.svg.png",
+    logo: cl1,
   },
   {
     name: "TATA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png",
+    logo: cl2,
   },
   {
     name: "HAL",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/HAL_Logo.svg/200px-HAL_Logo.svg.png",
+    logo: cl3,
   },
   {
     name: "Hero",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hero_MotoCorp_Logo.svg/200px-Hero_MotoCorp_Logo.svg.png",
+    logo:cl4,
   },
-  {
-    name: "UltraTech",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/UltraTech_Cement_Logo.svg/200px-UltraTech_Cement_Logo.svg.png",
-  },
-  {
-    name: "Hindustan Unilever",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Hindustan_Unilever_Logo.svg/200px-Hindustan_Unilever_Logo.svg.png",
-  },
+
   {
     name: "ITC",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/ITC_Limited_Logo.svg/200px-ITC_Limited_Logo.svg.png",
+    logo: cl5,
   },
   {
     name: "PepsiCo",
@@ -1183,15 +1183,11 @@ const clientLogos = [
   },
   {
     name: "Siemens",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/200px-Siemens-logo.svg.png",
-  },
-  {
-    name: "ABB",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/200px-ABB_logo.svg.png",
+    logo: cl6,
   },
   {
     name: "JSW Steel",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/JSW_Steel_Logo.svg/200px-JSW_Steel_Logo.svg.png",
+    logo: cl7,
   },
 ];
 
