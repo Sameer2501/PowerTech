@@ -1280,15 +1280,13 @@ function ClientsMarquee() {
         }
 
         .cm-logo-card img {
-          max-width: 100%;
-          max-height: 76px;
-          object-fit: contain;
-          filter: grayscale(1) opacity(0.65);
-          transition: filter 0.3s;
-        }
-        .cm-logo-card:hover img {
-          filter: grayscale(0) opacity(1);
-        }
+  max-width: 100%;
+  max-height: 76px;
+  object-fit: contain;
+}
+.cm-logo-card:hover img {
+  filter: none;
+}
 
         @media (max-width: 600px) {
           .cm-logo-card { width: 170px; height: 90px; margin: 0 12px; padding: 16px 20px; }

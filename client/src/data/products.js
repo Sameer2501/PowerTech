@@ -21,22 +21,23 @@ export const products = [
     description: "We are a leading manufacturer, supplier, and exporter of a wide range of Servo Voltage Stabilizers and Automatic Voltage Stabilizers, designed for diverse electrical and electronic applications. Manufactured using high-grade copper wires, our products deliver optimal energy efficiency and superior durability.",
     subTypes: [
       {
-        title: "Type: Balanced",
-        image: p1,
-        description: "We are a leading manufacturer, supplier, and exporter of a wide range of Servo Voltage Stabilizers and Automatic Voltage Stabilizers, designed for diverse electrical and electronic applications. Manufactured using high-grade copper wires, our products deliver optimal energy efficiency and superior durability. It ensures fully balanced voltage across all phases."
-      },
-      {
-        title: "Type: Unbalanced",
-        image: p2,
-        description: "Our Unbalanced Servo Voltage Stabilizers are engineered to handle separate phases independently. Ideal for power environments where there are significant voltage imbalances, ensuring each phase receives targeted voltage correction."
-      },
-      {
-        title: "Type: Air Cooled",
+        title: "Type: Oil Cooled Linear type",
         image: p3,
         description: "The Air-Cooled Voltage Stabilizers offer excellent heat dissipation without the need for liquid coolants. Designed perfectly for indoor setups and cleaner industrial environments with efficient air convection systems."
       },
       {
-        title: "Type: Oil Cooled",
+        title: "Type: Unbalanced",
+        image: p1,
+        description: "We are a leading manufacturer, supplier, and exporter of a wide range of Servo Voltage Stabilizers and Automatic Voltage Stabilizers, designed for diverse electrical and electronic applications. Manufactured using high-grade copper wires, our products deliver optimal energy efficiency and superior durability. It ensures fully balanced voltage across all phases."
+      },
+      {
+        title: "Type: balanced",
+        image: p2,
+        description: "Our Unbalanced Servo Voltage Stabilizers are engineered to handle separate phases independently. Ideal for power environments where there are significant voltage imbalances, ensuring each phase receives targeted voltage correction."
+      },
+      
+      {
+        title: "Type: Air Cooled ",
         image: p4,
         description: `Designed for heavy-duty single-phase systems, utilizing oil cooling to efficiently handle high loads.
 
