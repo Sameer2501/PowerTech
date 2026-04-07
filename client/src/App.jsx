@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Company from './pages/Company'
@@ -9,10 +9,21 @@ import Career from './pages/Career'
 import Product from './pages/Product'
 import ProductDetails from './pages/ProductDetails'
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/products" element={<Product />} />
         <Route path="/products/:id" element={<ProductDetails />} />

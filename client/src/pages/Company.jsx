@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Contact from '../components/Contact';
 import img from '../assets/img22.jpg';
+import mission from '../assets/MISSION.png';
+import companyVideo from '../assets/company.mp4';
 const Company = () => {
-    return (
-        <>
-            <style>{`
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <style>{`
         /* Import fonts if not globally available */
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
@@ -18,7 +24,7 @@ const Company = () => {
         .cp-hero {
           position: relative;
           width: 100%;
-          height: 380px;
+          height: 300px;
           background: #222;
           display: flex;
           align-items: flex-end;
@@ -338,210 +344,217 @@ const Company = () => {
         }
       `}</style>
 
-            <div className="cp-page">
-                {/* ── HERO BANNER ── */}
-                <section className="cp-hero">
-                    <img
-                        src={img}
-                        alt="Engineers working on electrical panel"
-                    />
-                    <div className="cp-hero-title-box">
-                        <h1>Company</h1>
-                    </div>
-                </section>
+      <div className="cp-page">
+        {/* ── HERO BANNER ── */}
+        <section className="cp-hero">
+          <img
+            src={img}
+            alt="Engineers working on electrical panel"
+          />
+          <div className="cp-hero-title-box">
+            <h1>Company</h1>
+          </div>
+        </section>
 
-                {/* ── LEGACY SECTION ── */}
-                <section className="cp-section">
-                    <div className="cp-legacy">
-                        <div className="cp-legacy-content">
-                            <div className="cp-title-wrap">
-                                <div className="cp-title-bar"></div>
-                                <h2>Trusted legacy of<br />engineering excellence's</h2>
-                            </div>
-                            <p>
-                                Founded in 1967, Super Power Tech is a leading group specializing in energy-efficient equipment. A
-                                pioneer in Industrial Voltage Stabilizers and Silicon Power Rectifiers, SPT has set
-                                industry benchmarks for over five decades.
-                            </p>
-                            <p>
-                                Established in 1983, its Faridabad unit is led by specialized experts and
-                                distinguished engineers. The company also manufactures LED lighting, EMI
-                                filters, and MICA capacitors for defense and aerospace. Recently, Super Power Tech introduced
-                                100% Natural Air Cooled Stabilizers in collaboration with international partners.
-                            </p>
-                        </div>
-                        <div className="cp-legacy-img-wrap">
-                            <img
-                                src={img}
-                                alt="Electrical Transformer Station"
-                            />
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── FACTS & FIGURES ── */}
-                <div className="cp-facts-section">
-                    <div className="cp-facts-title-wrap">
-                        <div className="cp-title-bar"></div>
-                        <h2>Facts and Figures</h2>
-                    </div>
-                    <div className="cp-facts-grid">
-                        <div className="cp-fact-item">
-                            <h3>6+</h3>
-                            <p>Manufacturing Units</p>
-                        </div>
-                        <div className="cp-fact-item">
-                            <h3>35+</h3>
-                            <p>Countries Global Presence</p>
-                        </div>
-                        <div className="cp-fact-item">
-                            <h3>58+</h3>
-                            <p>years of Leadership</p>
-                        </div>
-                        <div className="cp-fact-item">
-                            <h3>700+</h3>
-                            <p>Experienced & Skilled Manpower</p>
-                        </div>
-                        <div className="cp-fact-item">
-                            <h3>174+</h3>
-                            <p>Sales & Service Centres</p>
-                        </div>
-                        <div className="cp-fact-item">
-                            <h3>35000+</h3>
-                            <p>Installations across industry</p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ── MISSION SECTION ── */}
-                <section className="cp-mission">
-                    <div className="cp-mission-img">
-                        <img
-                            src={img}
-                            alt="Electrical engineer working on site"
-                        />
-                    </div>
-                    <div className="cp-mission-content">
-                        <div className="cp-mission-title-wrap">
-                            <div className="cp-mission-title-bar"></div>
-                            <h2>Company Mission</h2>
-                        </div>
-                        <p>
-                            Our mission is to continuously innovate and deploy transformative
-                            action to maintain high value of satisfaction for our customers.
-                            The needs of our Clients who are constantly searching for the latest
-                            technologies and new ways of thinking to make the best project
-                            decisions.
-                        </p>
-                        <p>
-                            We continuously develop, expertise and apply them in helping
-                            our Clients in their business activities. With wide experience, we also
-                            develop new, efficient stabilizer that enable our Clients to fluctuation
-                            free their business.
-                        </p>
-                    </div>
-                </section>
-
-                {/* ── VISION SECTION ── */}
-                <section className="cp-vision">
-                    <div className="cp-vision-content">
-                        <div className="cp-vision-title-wrap">
-                            <div className="cp-vision-title-bar"></div>
-                            <h2>Vision</h2>
-                        </div>
-                        <p>
-                            To establish a state-of-the-art manufacturing ecosystem for energy-
-                            efficient electrical equipment and emerge as a globally recognized
-                            leader in the industry. The vision is driven by a commitment to
-                            innovation, quality excellence, and continuous growth, aiming to set
-                            new benchmarks in performance and reliability across global markets.
-                        </p>
-                    </div>
-                    <div className="cp-vision-img">
-                        <img
-                            src={img}
-                            alt="Engineers with hard hats"
-                        />
-                    </div>
-                </section>
-
-                {/* ── OUR VALUES SECTION ── */}
-                <section className="cp-values">
-                    <div className="cp-values-header">
-                        <div className="cp-values-title-wrap">
-                            <div className="cp-values-title-bar"></div>
-                            <h2>Our Values</h2>
-                        </div>
-                        <p>
-                            At Super Power Tech, we help businesses tackle everyday power and resource challenges.
-                            With our knowledge and experience, we deliver reliable solutions that add real value for our customers.
-                        </p>
-                        <p>
-                            Industries worldwide are facing rapid change. Rising energy demands, resource constraints,
-                            technological shifts, and environmental challenges are reshaping the way businesses operate.
-                            Meeting these challenges requires more than just standard solutions &mdash; it calls for proven
-                            expertise, practical innovation, and reliable performance.
-                        </p>
-                    </div>
-                    
-                    <div className="cp-values-grid">
-                        <div className="cp-value-item">
-                            <div className="cp-value-icon">
-                                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    <path d="M9 12l2 2 4-4"></path>
-                                </svg>
-                            </div>
-                            <h4>Reliability</h4>
-                        </div>
-                        <div className="cp-value-item">
-                            <div className="cp-value-icon">
-                                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
-                                    <path d="M2 12h20"></path>
-                                </svg>
-                            </div>
-                            <h4>Sustainability</h4>
-                        </div>
-                        <div className="cp-value-item">
-                            <div className="cp-value-icon">
-                                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 010 7.75"></path>
-                                </svg>
-                            </div>
-                            <h4>Customer Centric</h4>
-                        </div>
-                        <div className="cp-value-item">
-                            <div className="cp-value-icon">
-                                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                                </svg>
-                            </div>
-                            <h4>Integrity and Trust</h4>
-                        </div>
-                        <div className="cp-value-item">
-                            <div className="cp-value-icon">
-                                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="8" r="7"></circle>
-                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                                    <path d="M9 8l2 2 4-4"></path>
-                                </svg>
-                            </div>
-                            <h4>Quality Without Compromise</h4>
-                        </div>
-                    </div>
-                </section>
-
+        {/* ── LEGACY SECTION ── */}
+        <section className="cp-section">
+          <div className="cp-legacy">
+            <div className="cp-legacy-content">
+              <div className="cp-title-wrap">
+                <div className="cp-title-bar"></div>
+                <h2>Trusted legacy of<br />engineering excellence's</h2>
+              </div>
+              <p>
+                Started back in year 2010 with the physical location in Ludhiana, Punjab, our company named Super Power
+                Electricals is specialized in manufacturing electrical gadgets. Our wide range of products includes Servo Voltage
+                Stabilizer, Control Panel, Electro Plating Rectifier, Battery Charger, Plate Charger, Power Factor Panel, Step Down
+                Transformer, On-line UPS, HT Transformer, Isolation Transformer etc.
+              </p>
+              <p>
+                Our manager Mr. Ansari is taking care of our business operations and makes sure that the company delivers the best value
+                of customers' money. We have been developing our product line under the leadership of our Technical Manager & Team.
+                Mr. Ansari is a technically qualified person having an experience of more than a decade. From manufacturing to
+                delivering the products, we have trained staff which works tirelessly to keep the company ahead in the market. We are
+                one of the most reliable companies offering electrical products with premium performance at economical rates.
+              </p>
             </div>
+            <div className="cp-legacy-img-wrap">
+              <video
+                src={companyVideo}
+                autoPlay
+                loop
+                muted
+                controls
+                playsInline
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+          </div>
+        </section>
 
-            {/* ───────────────── CONTACT / FOOTER ───────────────── */}
-            <Contact />
-        </>
-    );
+        {/* ── FACTS & FIGURES ── */}
+        <div className="cp-facts-section">
+          <div className="cp-facts-title-wrap">
+            <div className="cp-title-bar"></div>
+            <h2>Facts and Figures</h2>
+          </div>
+          <div className="cp-facts-grid">
+            <div className="cp-fact-item">
+              <h3>6+</h3>
+              <p>Manufacturing Units</p>
+            </div>
+            <div className="cp-fact-item">
+              <h3>35+</h3>
+              <p>Countries Global Presence</p>
+            </div>
+            <div className="cp-fact-item">
+              <h3>58+</h3>
+              <p>years of Leadership</p>
+            </div>
+            <div className="cp-fact-item">
+              <h3>700+</h3>
+              <p>Experienced & Skilled Manpower</p>
+            </div>
+            <div className="cp-fact-item">
+              <h3>174+</h3>
+              <p>Sales & Service Centres</p>
+            </div>
+            <div className="cp-fact-item">
+              <h3>35000+</h3>
+              <p>Installations across industry</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── MISSION SECTION ── */}
+        <section className="cp-mission">
+          <div className="cp-mission-img">
+            <img
+              src={mission}
+              alt="Electrical engineer working on site"
+            />
+          </div>
+          <div className="cp-mission-content">
+            <div className="cp-mission-title-wrap">
+              <div className="cp-mission-title-bar"></div>
+              <h2>Company Mission</h2>
+            </div>
+            <p>
+              Our mission is to continuously innovate and deploy transformative
+              action to maintain high value of satisfaction for our customers.
+              The needs of our Clients who are constantly searching for the latest
+              technologies and new ways of thinking to make the best project
+              decisions.
+            </p>
+            <p>
+              We continuously develop, expertise and apply them in helping
+              our Clients in their business activities. With wide experience, we also
+              develop new, efficient stabilizer that enable our Clients to fluctuation
+              free their business.
+            </p>
+          </div>
+        </section>
+
+        {/* ── VISION SECTION ── */}
+        <section className="cp-vision">
+          <div className="cp-vision-content">
+            <div className="cp-vision-title-wrap">
+              <div className="cp-vision-title-bar"></div>
+              <h2>Vision</h2>
+            </div>
+            <p>
+              To establish a state-of-the-art manufacturing ecosystem for energy-
+              efficient electrical equipment and emerge as a globally recognized
+              leader in the industry. The vision is driven by a commitment to
+              innovation, quality excellence, and continuous growth, aiming to set
+              new benchmarks in performance and reliability across global markets.
+            </p>
+          </div>
+          <div className="cp-vision-img">
+            <img
+              src={img}
+              alt="Engineers with hard hats"
+            />
+          </div>
+        </section>
+
+        {/* ── OUR VALUES SECTION ── */}
+        <section className="cp-values">
+          <div className="cp-values-header">
+            <div className="cp-values-title-wrap">
+              <div className="cp-values-title-bar"></div>
+              <h2>Our Values</h2>
+            </div>
+            <p>
+              At Super Power Tech, we help businesses tackle everyday power and resource challenges.
+              With our knowledge and experience, we deliver reliable solutions that add real value for our customers.
+            </p>
+            <p>
+              Industries worldwide are facing rapid change. Rising energy demands, resource constraints,
+              technological shifts, and environmental challenges are reshaping the way businesses operate.
+              Meeting these challenges requires more than just standard solutions &mdash; it calls for proven
+              expertise, practical innovation, and reliable performance.
+            </p>
+          </div>
+
+          <div className="cp-values-grid">
+            <div className="cp-value-item">
+              <div className="cp-value-icon">
+                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+              </div>
+              <h4>Reliability</h4>
+            </div>
+            <div className="cp-value-item">
+              <div className="cp-value-icon">
+                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+              </div>
+              <h4>Sustainability</h4>
+            </div>
+            <div className="cp-value-item">
+              <div className="cp-value-icon">
+                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 010 7.75"></path>
+                </svg>
+              </div>
+              <h4>Customer Centric</h4>
+            </div>
+            <div className="cp-value-item">
+              <div className="cp-value-icon">
+                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h4>Integrity and Trust</h4>
+            </div>
+            <div className="cp-value-item">
+              <div className="cp-value-icon">
+                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  <path d="M9 8l2 2 4-4"></path>
+                </svg>
+              </div>
+              <h4>Quality Without Compromise</h4>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      {/* ───────────────── CONTACT / FOOTER ───────────────── */}
+      <Contact />
+    </>
+  );
 };
 
 export default Company;

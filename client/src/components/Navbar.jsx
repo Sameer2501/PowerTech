@@ -1,26 +1,36 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo12.png";
 
 const navLinks = [
   {
     label: "Products",
     dropdown: [
-      "Voltage Stablizers",
-      "HT Transformers",
-      "Control Panels",
-      "Electroplating Rectifiers",
-      "Battery Charger",
-      "Online UPS",
-      "Isolation 3 Phase Transformers",
+      "Servo Voltage Stablizers",
+      "HT Transformer",
+      "Control Panel",
+      "Electroplating Rectifier",
+      "Automatic Battery Charger",
+      "On line UPS",
+      "Isolation 3 Phase Transformer",
     ],
   },
   { label: "Company" },
   { label: "Technology" },
-  { label: "News" },
+  { label: "Events" },
   { label: "Career" },
   { label: "Contact" },
 ];
+
+const productLinkMap = {
+  "Servo Voltage Stablizers": "voltage-stabilizers",
+  "HT Transformer": "ht-transformers",
+  "Control Panel": "control-panels",
+  "Electroplating Rectifier": "electroplating-rectifiers",
+  "Automatic Battery Charger": "battery-charger",
+  "On line UPS": "online-ups",
+  "Isolation 3 Phase Transformer": "isolation-3-phase-transformers",
+};
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -73,7 +83,7 @@ export default function Navbar() {
         .spt-navbar-inner {
           max-width: 1400px;
           margin: 0 auto;
-          padding: 0 10px;
+          padding: 0 30px;
           height: 70px;
           display: flex;
           align-items: center;
@@ -90,7 +100,7 @@ export default function Navbar() {
         }
 
         .spt-logo img {
-          height: 82px;
+          height: 55px;
           width: auto;
           object-fit: contain;
         }
@@ -366,13 +376,12 @@ export default function Navbar() {
         <div className="spt-navbar-inner">
 
           {/* LOGO */}
-          <a 
-            href="/" 
+          <a
+            href="/"
             className="spt-logo"
             onClick={(e) => {
               e.preventDefault();
               navigate("/");
-              window.scrollTo(0,0);
             }}
           >
             {/* Replace src with your actual logo path, e.g. "/logo.png" */}
@@ -430,16 +439,28 @@ export default function Navbar() {
                     </button>
                     <div className={`spt-dropdown${dropdownOpen ? " open" : ""}`}>
                       {link.dropdown.map((item) => (
-                        <a key={item} href="#" className="spt-dropdown-item" onClick={(e) => e.preventDefault()}>
+                        <a
+                          key={item}
+                          href="#"
+                          className="spt-dropdown-item"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const id = productLinkMap[item];
+                            if (id) {
+                              navigate(`/products/${id}`);
+                              setDropdownOpen(false);
+                            }
+                          }}
+                        >
                           {item}
                         </a>
                       ))}
                     </div>
                   </>
                 ) : (
-                  <a 
-                    href={link.label === "Company" ? "/company" : link.label === "Contact" ? "/contactus" : link.label === "Technology" ? "/technology" : link.label === "Career" ? "/career" : "#"} 
-                    className="spt-nav-link" 
+                  <a
+                    href={link.label === "Company" ? "/company" : link.label === "Contact" ? "/contactus" : link.label === "Technology" ? "/technology" : link.label === "Career" ? "/career" : "#"}
+                    className="spt-nav-link"
                     onClick={(e) => {
                       e.preventDefault();
                       if (link.label === "Company") {
@@ -496,24 +517,20 @@ export default function Navbar() {
         <div className={`spt-mobile-menu${mobileMenuOpen ? " open" : ""}`}>
           {navLinks.map((link) => (
             <div key={link.label}>
-              <div 
+              <div
                 className="spt-mobile-link"
                 onClick={() => {
                   if (link.label === "Company") {
                     navigate('/company');
-                    window.scrollTo(0, 0);
                     setMobileMenuOpen(false);
                   } else if (link.label === "Contact") {
                     navigate('/contactus');
-                    window.scrollTo(0, 0);
                     setMobileMenuOpen(false);
                   } else if (link.label === "Technology") {
                     navigate('/technology');
-                    window.scrollTo(0, 0);
                     setMobileMenuOpen(false);
                   } else if (link.label === "Career") {
                     navigate('/career');
-                    window.scrollTo(0, 0);
                     setMobileMenuOpen(false);
                   }
                 }}
@@ -521,7 +538,19 @@ export default function Navbar() {
                 {link.label}
               </div>
               {link.dropdown && link.dropdown.map((item) => (
-                <div key={item} className="spt-mobile-sub">→ {item}</div>
+                <div
+                  key={item}
+                  className="spt-mobile-sub"
+                  onClick={() => {
+                    const id = productLinkMap[item];
+                    if (id) {
+                      navigate(`/products/${id}`);
+                      setMobileMenuOpen(false);
+                    }
+                  }}
+                >
+                  → {item}
+                </div>
               ))}
             </div>
           ))}

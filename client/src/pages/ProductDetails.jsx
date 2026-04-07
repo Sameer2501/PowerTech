@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Contact from '../components/Contact';
 import { products } from '../data/products';
@@ -10,8 +10,11 @@ const ProductDetails = () => {
     // Find current product
     const product = products.find(p => p.id === id);
 
-    useEffect(() => {
+    const [activeSubTypeIndex, setActiveSubTypeIndex] = useState(0);
+
+    useLayoutEffect(() => {
         window.scrollTo(0, 0);
+        setActiveSubTypeIndex(0);
     }, [id]);
 
     if (!product) {
@@ -81,8 +84,8 @@ const ProductDetails = () => {
           height: 500px;
         }
         .pd-main-img-box img {
-          max-width: 100%;
-          max-height: 100%;
+          width: 100%;
+          height: 100%;
           object-fit: contain;
         }
         .pd-thumb-box {
@@ -98,6 +101,11 @@ const ProductDetails = () => {
           width: 100%;
           height: 100%;
           object-fit: contain;
+        }
+        .pd-thumbnails-container {
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
         }
 
         .pd-right-col {
@@ -118,6 +126,7 @@ const ProductDetails = () => {
           color: #555;
           line-height: 1.8;
           margin-bottom: 25px;
+          white-space: pre-wrap;
         }
         .pd-features-list {
           list-style: none;
@@ -269,16 +278,41 @@ const ProductDetails = () => {
                 <section className="pd-main-wrap">
                     <div className="pd-left-col">
                         <div className="pd-main-img-box">
-                            <img src={product.image} alt={product.title} />
+                            <img src={product.subTypes ? product.subTypes[activeSubTypeIndex].image : product.image} alt={product.title} />
                         </div>
-                        <div className="pd-thumb-box">
-                            <img src={product.image} alt="Thumbnail" />
-                        </div>
+                        {product.subTypes ? (
+                            <div className="pd-thumbnails-container">
+                                {product.subTypes.map((subType, idx) => (
+                                    <div 
+                                        key={idx}
+                                        className="pd-thumb-box"
+                                        style={{ 
+                                            borderColor: activeSubTypeIndex === idx ? '#1a7a1a' : '#eee',
+                                            opacity: activeSubTypeIndex === idx ? 1 : 0.6
+                                        }}
+                                        onClick={() => setActiveSubTypeIndex(idx)}
+                                    >
+                                        <img src={subType.image} alt="Thumbnail" />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="pd-thumb-box">
+                                <img src={product.image} alt="Thumbnail" />
+                            </div>
+                        )}
                     </div>
 
                     <div className="pd-right-col">
                         <h1 className="pd-title">{product.title}</h1>
-                        <p className="pd-desc">{product.description}</p>
+                        {product.subTypes && (
+                            <div style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '15px', color: '#1a7a1a' }}>
+                                {product.subTypes[activeSubTypeIndex].title}
+                            </div>
+                        )}
+                        <p className="pd-desc">
+                            {product.subTypes ? product.subTypes[activeSubTypeIndex].description : product.description}
+                        </p>
                         
                         <ul className="pd-features-list">
                             {product.features.map((feature, idx) => (

@@ -19,7 +19,7 @@ const ContactUs = () => {
         .cp-hero {
           position: relative;
           width: 100%;
-          height: 380px;
+          height: 300px;
           background: #222;
           display: flex;
           align-items: flex-end;

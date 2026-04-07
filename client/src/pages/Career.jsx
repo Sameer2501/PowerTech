@@ -21,7 +21,7 @@ const Career = () => {
         .cp-hero {
           position: relative;
           width: 100%;
-          height: 500px;
+          height: 400px;
           background: #222;
           display: flex;
           align-items: flex-end;

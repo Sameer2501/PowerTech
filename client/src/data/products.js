@@ -1,28 +1,88 @@
+import p1 from '../assets/p1.jpeg';
+import p2 from '../assets/p2.jpeg';
+import p3 from '../assets/p3.jpeg';
+import p4 from '../assets/p4.jpeg';
+import h1 from '../assets/h1.jpeg';
+import ht2 from '../assets/ht2.png';
+import e1 from '../assets/e1.jpeg';
+import er2 from '../assets/er2.png';
+import c1 from '../assets/c1.jpeg';
+import cp2 from '../assets/cp2.png';
+import cp3 from '../assets/cp3.png';
+import sdt from '../assets/sdt.jpeg';
+import olu from '../assets/olu.jpeg';
+import ipt from '../assets/ipt.jpeg';
+import abc from '../assets/abc.png'
 export const products = [
   {
     id: 'voltage-stabilizers',
-    title: 'Voltage Stablizers',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    description: "Super Power Tech manufactures a range of highly efficient Automatic Voltage Controllers and Stabilizers for several industrial applications, which are custom-built to client specifications.",
+    title: 'Servo Voltage Stabilizer',
+    image: p1,
+    description: "We are a leading manufacturer, supplier, and exporter of a wide range of Servo Voltage Stabilizers and Automatic Voltage Stabilizers, designed for diverse electrical and electronic applications. Manufactured using high-grade copper wires, our products deliver optimal energy efficiency and superior durability.",
+    subTypes: [
+      {
+        title: "Type: Balanced",
+        image: p1,
+        description: "We are a leading manufacturer, supplier, and exporter of a wide range of Servo Voltage Stabilizers and Automatic Voltage Stabilizers, designed for diverse electrical and electronic applications. Manufactured using high-grade copper wires, our products deliver optimal energy efficiency and superior durability. It ensures fully balanced voltage across all phases."
+      },
+      {
+        title: "Type: Unbalanced",
+        image: p2,
+        description: "Our Unbalanced Servo Voltage Stabilizers are engineered to handle separate phases independently. Ideal for power environments where there are significant voltage imbalances, ensuring each phase receives targeted voltage correction."
+      },
+      {
+        title: "Type: Air Cooled",
+        image: p3,
+        description: "The Air-Cooled Voltage Stabilizers offer excellent heat dissipation without the need for liquid coolants. Designed perfectly for indoor setups and cleaner industrial environments with efficient air convection systems."
+      },
+      {
+        title: "Type: Oil Cooled",
+        image: p4,
+        description: `Designed for heavy-duty single-phase systems, utilizing oil cooling to efficiently handle high loads.
+
+Advantages
+• High efficiency (up to 98%)
+• Zero waveform distortion
+• ±1% precise output regulation
+• Durable industrial design
+
+Applications
+• Heavy machinery & industrial equipment
+• Stabilizing critical medical devices
+• Large commercial setups & rural areas`
+      }
+    ],
     features: [
-      "Provides constant and reliable voltage output",
-      "High efficiency and designed for continuous duty",
-      "Protects sensitive electronics from voltage fluctuations",
-      "Customizable wide input voltage range options",
-      "Robust build quality for harsh industrial environments"
+      "Available in air-cooled, dry-type, single-phase, and three-phase systems",
+      "Advanced mechanical and electrical engineering processes",
+      "Suitable for all types of power factor loads ensuring minimal losses",
+      "Supports natural air cooling, forced air cooling, and oil cooling",
+      "Delivers superior performance, durability, and efficiency"
     ],
     keyBenefits: [
-      { id: 1, title: 'Energy Saving', desc: 'Drastically reduces energy consumption and operational costs.' },
-      { id: 2, title: 'Extreme Reliability', desc: 'Built resiliently for challenging industrial conditions.' },
-      { id: 3, title: 'Smart Control', desc: 'Advanced microprocessor-based control for precision.' },
-      { id: 4, title: 'Safe Operation', desc: 'Comprehensive overload and short circuit protection.' }
+      { id: 1, title: 'Superior Performance', desc: 'Built to deliver maximum efficiency and stability under varying loads.' },
+      { id: 2, title: 'Extreme Reliability', desc: 'Manufactured with high-grade copper wires and durable components.' },
+      { id: 3, title: 'Flexible Cooling', desc: 'Supports natural, forced air, or oil cooling for demanding environments.' },
+      { id: 4, title: 'Energy Optimization', desc: 'Designed for minimal losses across all types of power factor loads.' }
     ]
   },
   {
     id: 'ht-transformers',
     title: 'HT Transformers',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    image: h1,
     description: "Our High Tension (HT) Transformers are engineered for power transmission and distribution with minimal losses.",
+    subTypes: [
+      {
+        title: "Type: Standard HT",
+        image: h1,
+        description: "Our Standard High Tension (HT) Transformers are engineered for optimal power transmission and distribution with minimal electrical losses."
+      },
+      {
+        title: "Type: Advanced HT",
+        image: ht2,
+        description: "The Advanced HT Transformers offer robust build quality with enhanced dynamic short circuit withstand capacity, designed for severe and demanding environments."
+      }
+    ],
     features: [
       "Low loss core materials for high efficiency",
       "Excellent dynamic short circuit withstand capacity",
@@ -40,27 +100,56 @@ export const products = [
   {
     id: 'control-panels',
     title: 'Control Panels',
-    image: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&q=80',
-    description: "We provide bespoke Control Panel solutions tailored to seamlessly integrate into and automate your complex industrial processes.",
+    image: c1,
+    description: "We operate an in-house fabrication shop continuously manufacturing bespoke Power Control Panels and Remote Control Panels. Utilizing premium switchgear from leading brands like L&T, ABB, and Schneider, we design precision control circuits tailored to meet all specific requirements of our esteemed clients.",
+    subTypes: [
+      {
+        title: "Model: Standard Enclosure",
+        image: c1,
+        description: "We operate an in-house fabrication shop continuously manufacturing bespoke Power Control Panels and Remote Control Panels. Utilizing premium switchgear from leading brands like L&T, ABB, and Schneider, we design precision control circuits tailored to meet all specific requirements of our esteemed clients."
+      },
+      {
+        title: "Model: Multi-Tier Panel",
+        image: cp2,
+        description: "We operate an in-house fabrication shop continuously manufacturing bespoke Power Control Panels and Remote Control Panels. Utilizing premium switchgear from leading brands like L&T, ABB, and Schneider, we design precision control circuits tailored to meet all specific requirements of our esteemed clients."
+      },
+      {
+        title: "Model: High-Density Control",
+        image: cp3,
+        description: "We operate an in-house fabrication shop continuously manufacturing bespoke Power Control Panels and Remote Control Panels. Utilizing premium switchgear from leading brands like L&T, ABB, and Schneider, we design precision control circuits tailored to meet all specific requirements of our esteemed clients."
+      }
+    ],
     features: [
-      "Ergonomic layout for easy operation and monitoring",
-      "High-grade powder coating for corrosion resistance",
-      "Integration with PLC and SCADA systems",
-      "Strict compliance with international safety standards",
-      "Modular design for future expansion"
+      "Control Panels for Feeder machines and HV Testers",
+      "MCC, PCC, and APFC (Automatic Power-Factor Correction) Panels",
+      "Custom Panels with Mimic Design",
+      "Test Benches of all types",
+      "Enclosures for all classes of Transformers"
     ],
     keyBenefits: [
-      { id: 1, title: 'Automation Ready', desc: 'Fully compatible with modern automated manufacturing systems.' },
-      { id: 2, title: 'Enhanced Safety', desc: 'Comprehensive fail-safes and organized wiring.' },
-      { id: 3, title: 'User Friendly', desc: 'Intuitive interfaces for reduced operator learning curves.' },
-      { id: 4, title: 'Scalable', desc: 'Easily upgradable hardware architecture.' }
+      { id: 1, title: 'Premium Quality', desc: 'Built using top-grade switchgear from trusted industry leaders.' },
+      { id: 2, title: 'Fully Custom', desc: 'Circuits and enclosures designed specifically for your unique operational requirements.' },
+      { id: 3, title: 'Versatile Range', desc: 'Extensive portfolio covering everything from test benches to MCC/PCC panels.' },
+      { id: 4, title: 'Enhanced Safety', desc: 'Strict compliance with safety standards and robust fabrication.' }
     ]
   },
   {
     id: 'electroplating-rectifiers',
     title: 'Electroplating Rectifiers',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80',
-    description: "Specialized DC power supplies designed specifically for the rigorous demands of the electroplating, anodizing, and electrochemical industries.",
+    image: e1,
+    description: `Our Electroplating Rectifiers deliver highly efficient AC to DC conversion, ideal for anodizing, hydrogenation, and various electro-chemical processes. Designed to be compact, sturdy, and energy-saving with low maintenance, they feature clear analog Ampere and Volt indicators. We offer tailor-made capacities ranging from 25A to 25,000A (with specific models from 12V/100A to 12V/10,000A & 100V/50A to 250V/200A) to perfectly match your space and power needs.`,
+    subTypes: [
+      {
+        title: "Type: Standard Model",
+        image: e1,
+        description: `Our Standard Electroplating Rectifiers deliver highly efficient AC to DC conversion, ideal for anodizing, hydrogenation, and various electro-chemical processes. Designed to be compact, sturdy, and energy-saving with low maintenance.`
+      },
+      {
+        title: "Type: Custom Capacity Model",
+        image: er2,
+        description: `We offer tailor-made capacities for our High-Power Rectifiers ranging from 25A to 25,000A (with specific models from 12V/100A to 12V/10,000A & 100V/50A to 250V/200A) to perfectly match your space and heavy industrial power needs, featuring clear analog Ampere and Volt indicators.`
+      }
+    ],
     features: [
       "Stepless DC voltage and current control",
       "Ripple-free output for superior plating finishes",
@@ -77,8 +166,8 @@ export const products = [
   },
   {
     id: 'battery-charger',
-    title: 'Battery Charger',
-    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80',
+    title: 'Automatic Battery Charger',
+    image: abc,
     description: "Industrial-grade Battery Chargers providing stable and regulated charging for substations, power plants, and telecom networks.",
     features: [
       "Float and Boost charging modes",
@@ -95,9 +184,28 @@ export const products = [
     ]
   },
   {
+    id: 'step-down-transformer',
+    title: 'Step Down Transformer',
+    image: sdt,
+    description: "Step Down Transformers are primarily used to reduce high voltage levels to a safer and more usable level required by electrical equipment. They are widely used in industries to safely power imported machines with differing voltage standards, ensuring stable conversion, enhanced equipment safety, and efficient power distribution.",
+    features: [
+      "Phase: 3 Phase (Frequency: 50 Hz)",
+      "Power Rating: 200 kVA",
+      "Insulation Class: H",
+      "Primary Voltage: 440V, Secondary Voltage: 220V",
+      "Application: Ideal for Indoor Use"
+    ],
+    keyBenefits: [
+      { id: 1, title: 'Stable Conversion', desc: 'Ensures reliable voltage reduction for sensitive machinery.' },
+      { id: 2, title: 'Improved Safety', desc: 'Reduces high voltage levels to a safer, usable indoor standard.' },
+      { id: 3, title: 'International Compatibility', desc: 'Safely powers imported machines with different voltage requirements.' },
+      { id: 4, title: 'Efficient Distribution', desc: 'Provides efficient power distribution for industrial and commercial uses.' }
+    ]
+  },
+  {
     id: 'online-ups',
-    title: 'Online UPS',
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
+    title: 'On Line UPS',
+    image: olu,
     description: "Double-conversion Online UPS systems delivering pure sine wave output and uninterrupted power to your most mission-critical systems.",
     features: [
       "True double-conversion technology",
@@ -116,7 +224,7 @@ export const products = [
   {
     id: 'isolation-3-phase-transformers',
     title: 'Isolation 3 Phase Transformers',
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
+    image: ipt,
     description: "High-grade 3 Phase Isolation Transformers designed to decouple susceptible loads from electrical noise and voltage spikes generated on the mains.",
     features: [
       "Galvanic isolation between primary and secondary",

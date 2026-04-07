@@ -1,12 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Contact from "./Contact";
-
+import p1 from '../assets/p1.jpeg';
+import h1 from '../assets/h1.jpeg';
+import e1 from '../assets/e1.jpeg';
+import c1 from '../assets/c1.jpeg';
 const slides = [
   {
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80",
-    heading: "A Trusted Power",
-    heading2: "Technology Partner",
+    heading: "Sahi Voltage",
+    heading2: "Jyada Life",
     sub: "Delivering next-generation energy solutions built for reliability and performance.",
     cards: [
       {
@@ -101,24 +104,28 @@ const Icon = ({ name }) => {
 
 const products = [
   {
-    title: "Automatic Voltage Controllers / Stabilizers",
-    desc: "SPT's Automatic Voltage Controllers provide foolproof protection against voltage fluctuations for all your equipment.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
+    id: 'voltage-stabilizers',
+    title: "Servo Voltage Stabilizers",
+    desc: "SPT's Servo Voltage Stabilizers provide foolproof protection against voltage fluctuations for all your equipment.",
+    image: p1,
   },
   {
-    title: "Silicon Power Rectifiers",
-    desc: "SPT's Silicon Power Rectifiers are trusted for their energy efficiency and high performance in industrial use.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=80",
+    id: 'ht-transformers',
+    title: "HT TRANSFORMER",
+    desc: "SPT manufactures a range of HT Transformers built for demanding industrial environments.",
+    image: h1,
   },
   {
-    title: "Special Purpose Transformers",
-    desc: "SPT manufactures a range of Special Purpose Transformers built for demanding industrial environments.",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80",
+    id: 'control-panels',
+    title: "CONTROL PANEL",
+    desc: "SPT manufactures a range of Control Panels built for demanding industrial environments.",
+    image: c1,
   },
   {
-    title: "High Precision Electronics",
-    desc: "SPT's precision electronic components have been carefully designed and tested for maximum reliability.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80",
+    id: 'electroplating-rectifiers',
+    title: "ELECTROPLATING RECTIFIER",
+    desc: "SPT manufactures a range of Electroplating Rectifiers built for demanding industrial environments.",
+    image: e1,
   },
 ];
 
@@ -416,39 +423,43 @@ export default function Home() {
         }
 
         .ps-card-body {
-          padding: 28px 24px 20px;
+          padding: 24px 20px 8px;
           flex: 1;
         }
 
         .ps-card-title {
           font-family: 'Rajdhani', sans-serif;
-          font-size: 20px;
+          font-size: 24px;
           font-weight: 700;
           color: #1a7a1a;
           line-height: 1.25;
-          margin: 0 0 14px;
+          margin: 0 0 10px;
           text-align: center;
         }
 
         .ps-card-desc {
           font-family: 'Inter', sans-serif;
-          font-size: 13.5px;
-          color: #555;
-          line-height: 1.65;
+          font-size: 15px;
+          color: #444;
+          line-height: 1.6;
           margin: 0;
           text-align: center;
         }
 
         .ps-card-img {
           width: 100%;
-          height: 200px;
+          height: 280px;
           overflow: hidden;
-          background: #d9d9d9;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px;
         }
         .ps-card-img img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           transition: transform 0.4s ease;
         }
         .ps-card:hover .ps-card-img img { transform: scale(1.06); }
@@ -596,7 +607,7 @@ export default function Home() {
             className={`top${isOut ? " out" : ""}`}
           />
         </div>
-
+        clientL
         <div className="hw-ov" />
         <div className="hw-bfade" />
         <div className="hw-lbar" />
@@ -618,7 +629,7 @@ export default function Home() {
             {slide.sub}
           </p>
 
-          <button className={`hw-btn ${isOut ? "out" : "in"}`} onClick={() => { navigate('/products'); window.scrollTo(0,0); }}>
+          <button className={`hw-btn ${isOut ? "out" : "in"}`} onClick={() => navigate('/products')}>
             More About Products
             <span className="hw-arr">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="13" height="13">
@@ -666,9 +677,9 @@ export default function Home() {
             <div className="ps-title-bar" />
             <h2 className="ps-title">Our Products</h2>
           </div>
-          <button className="ps-more-btn" onClick={() => { navigate('/products'); window.scrollTo(0,0); }}>
+          <button className="ps-more-btn" onClick={() => navigate('/products')}>
             More Products
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14" style={{marginLeft:8}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14" style={{ marginLeft: 8 }}>
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
@@ -677,7 +688,11 @@ export default function Home() {
         {/* CARDS GRID */}
         <div className="ps-grid">
           {products.map((p, i) => (
-            <div key={i} className="ps-card">
+            <div
+              key={i}
+              className="ps-card"
+              onClick={() => { navigate('/products/' + p.id); }}
+            >
               <div className="ps-card-body">
                 <h3 className="ps-card-title">{p.title}</h3>
                 <p className="ps-card-desc">{p.desc}</p>
@@ -703,10 +718,18 @@ export default function Home() {
             </div>
 
             <p className="ab-desc">
-              Founded with a vision to lead India's power technology space, Super Power Tech is a trusted name specializing in energy-efficient equipment. A pioneer in Industrial Voltage Stabilizers and Silicon Power Rectifiers, SPT has set industry benchmarks and continues to power businesses across the nation.
+              Started back in year 2010 with the physical location in Ludhiana, Punjab, our company named Super Power
+              Electricals is specialized in manufacturing electrical gadgets. Our wide range of products includes Servo Voltage
+              Stabilizer, Control Panel, Electro Plating Rectifier, Battery Charger, Plate Charger, Power Factor Panel, Step Down
+              Transformer, On-line UPS, HT Transformer, Isolation Transformer etc. Our manager Mr. Ansari is taking care of our
+              business operations and makes sure that company delivers the best value of customers money. We have been
+              developing our product line under the leadership of our Technical Manager & Team. Mr. Ansari is a technically
+              qualified person and having a experience of more than decade. From manufacturing to delivering the products, we
+              have trained staff which works tirelessly to keep the company ahead in the market. We are one of the most reliable
+              companies which offer electrical products with performance at economical rates.
             </p>
 
-            <button className="ab-btn">
+            <button className="ab-btn" onClick={() => navigate('/company')}>
               Know More
               <span className="ab-arr">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
@@ -717,15 +740,15 @@ export default function Home() {
 
             <div className="ab-stats">
               <div>
-                <p className="ab-stat-num">15+</p>
+                <p className="ab-stat-num">20+</p>
                 <p className="ab-stat-label">Years of Experience</p>
               </div>
               <div>
-                <p className="ab-stat-num">20+</p>
+                <p className="ab-stat-num">7+</p>
                 <p className="ab-stat-label">Global Presence</p>
               </div>
               <div>
-                <p className="ab-stat-num">500+</p>
+                <p className="ab-stat-num">1500+</p>
                 <p className="ab-stat-label">Happy Clients</p>
               </div>
             </div>
@@ -1065,9 +1088,8 @@ function IndustriesSection() {
 
           {/* RIGHT — CONTENT */}
           <div
-            className={`iw-content${
-              animating && animDir ? ` slide-out-${animDir}` : !animating ? " slide-in" : ""
-            }`}
+            className={`iw-content${animating && animDir ? ` slide-out-${animDir}` : !animating ? " slide-in" : ""
+              }`}
           >
             <h3 className="iw-ind-title">{ind.title}</h3>
             <p className="iw-ind-desc">{ind.desc}</p>

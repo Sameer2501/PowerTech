@@ -422,7 +422,7 @@ export default function Contact() {
                   <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                 </a>
                 {/* LinkedIn */}
-                <a href="#" className="cf-social-btn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/super-power-tech-083506401?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="cf-social-btn" aria-label="LinkedIn">
                   <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                 </a>
                 {/* YouTube */}
@@ -441,7 +441,7 @@ export default function Contact() {
             <div className="cf-form-row">
               <div className="cf-field">
                 <label htmlFor="cf-name">Full Name</label>
-                <input id="cf-name" type="text" placeholder="John Doe" />
+                <input id="cf-name" type="text" placeholder="Enter Your Name" />
               </div>
               <div className="cf-field">
                 <label htmlFor="cf-phone">Phone</label>
@@ -449,7 +449,7 @@ export default function Contact() {
               </div>
               <div className="cf-field">
                 <label htmlFor="cf-email">Email</label>
-                <input id="cf-email" type="email" placeholder="john@company.com" />
+                <input id="cf-email" type="email" placeholder="Enter Email" />
               </div>
               <div className="cf-field">
                 <label htmlFor="cf-product">Product Interest</label>
@@ -517,7 +517,6 @@ export default function Contact() {
                   onClick={(e) => {
                     e.preventDefault();
                     navigate('/company');
-                    window.scrollTo(0, 0);
                   }}
                 >
                   Company
