@@ -1,6 +1,7 @@
 import React from 'react';
 import Contact from '../components/Contact';
 import mm from '../assets/mm.avif'; // User requested this for the hero
+import life from '../assets/life.jpeg'
 import img from '../assets/img22.jpg';
 import img22 from '../assets/img22.jpg';
 // import img from '../assets/img22.jpg';
@@ -84,7 +85,7 @@ const Career = () => {
         }
         .cr-life-img {
           width: 55%;
-          height: 450px;
+          height: 590px;
           object-fit: contain; /* Prevent the logo from being cropped */
           background-color: #fff;
           padding: 40px;
@@ -238,7 +239,7 @@ const Career = () => {
 
             {/* ── LIFE AT POWER TECH ── */}
             <section className="cr-life-sec">
-                <img src={img22} alt="Life at Power Tech" className="cr-life-img" />
+                <img src={life} alt="Life at Power Tech" className="cr-life-img" />
                 <div className="cr-life-card">
                     <h2>Life At Super Power Tech</h2>
                     <p>Our core values to be a company of integrity and innovation is consistent throughout the business. If our values resonate strongly with you and you are equipped for the challenge, Kindly let us know what kind of work you're passionate about and we'll notify you when matching career opportunities become available.</p>

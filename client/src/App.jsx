@@ -8,6 +8,7 @@ import Technology from './pages/Technology'
 import Career from './pages/Career'
 import Product from './pages/Product'
 import ProductDetails from './pages/ProductDetails'
+import Events from './pages/Events'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/technology" element={<Technology />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
     </BrowserRouter>
   )

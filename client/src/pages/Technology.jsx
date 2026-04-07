@@ -1,7 +1,7 @@
 import React from 'react';
 import Contact from '../components/Contact';
 import img from '../assets/img22.jpg';
-
+import tech from '../assets/tech.jpeg'
 const Technology = () => {
     return (
         <>
@@ -203,7 +203,7 @@ const Technology = () => {
             {/* ── INFO SECTION ── */}
             <section className="tech-info-sec">
                 <div className="tech-info-img">
-                    <img src={img} alt="Super Power Tech Transformers" />
+                    <img src={tech} alt="Super Power Tech Transformers" />
                 </div>
                 <div className="tech-info-content">
                     <p>The Super Power Tech Linear Voltage Regulating Transformer has been designed to meet a wide range of heavy-duty industrial applications as well as for Electricity Supply Utilities. Globally, these have become an established method of control, wherever continuously variable on-load control of voltage and power is needed. These can also be used to control many industrial processes like adjusting temperature, flow speeds, drive speeds, etc., to a pre-set program.</p>

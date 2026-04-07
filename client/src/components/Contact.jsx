@@ -455,13 +455,14 @@ export default function Contact() {
                 <label htmlFor="cf-product">Product Interest</label>
                 <select id="cf-product">
                   <option value="">Select a product…</option>
-                  <option>Voltage Stablizers</option>
-                  <option>HT Transformers</option>
-                  <option>Control Panels</option>
-                  <option>Electroplating Rectifiers</option>
-                  <option>Battery Charger</option>
-                  <option>Online UPS</option>
-                  <option>Isolation 3 Phase Transformers</option>
+                  <option>Servo Voltage Stablizers</option>
+                  <option>HT Transformer</option>
+                  <option>Control Panel</option>
+                  <option>Electroplating Rectifier</option>
+                  <option>Automatic Battery Charger</option>
+                  <option>On line UPS</option>
+                  <option>Isolation 3 Phase Transformer</option>
+                  <option>Stepdown Transformer</option>
                 </select>
               </div>
               <div className="cf-field full">
@@ -497,13 +498,29 @@ export default function Contact() {
           <div className="cf-links-col">
             <p className="cf-links-heading">Products</p>
             <ul className="cf-nav-list">
-              <li><a href="#">Voltage Stablizers</a></li>
-              <li><a href="#">HT Transformers</a></li>
-              <li><a href="#">Control Panels</a></li>
-              <li><a href="#">Electroplating Rectifiers</a></li>
-              <li><a href="#">Battery Charger</a></li>
-              <li><a href="#">Online UPS</a></li>
-              <li><a href="#">Isolation 3 Phase Transformers</a></li>
+              {[
+                { label: "Servo Voltage Stablizers", id: "voltage-stabilizers" },
+                { label: "HT Transformer", id: "ht-transformers" },
+                { label: "Control Panel", id: "control-panels" },
+                { label: "Electroplating Rectifier", id: "electroplating-rectifiers" },
+                { label: "Automatic Battery Charger", id: "battery-charger" },
+                { label: "On line UPS", id: "online-ups" },
+                { label: "Isolation 3 Phase Transformer", id: "isolation-3-phase-transformers" },
+                { label: "Stepdown Transformer", id: "step-down-transformer" },
+              ].map((prod) => (
+                <li key={prod.id}>
+                  <a
+                    href={`/products/${prod.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(`/products/${prod.id}`);
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    {prod.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -540,7 +557,8 @@ export default function Contact() {
                 </div>
                 <span className="cf-info-text">
                   <strong>Address</strong>
-                  Plot No. 12, Industrial Area, Phase‑2, Ludhiana, Punjab — 141003
+                  Plot No. 76, Karamjit Nagar, Satsang Ghar Road,
+                  Near Universal School, Lohara, Ludhiana-141016
                 </span>
               </li>
               <li className="cf-info-item">
@@ -549,7 +567,7 @@ export default function Contact() {
                 </div>
                 <span className="cf-info-text">
                   <strong>Phone</strong>
-                  +91 98765 43210
+                  +91-93578-16285
                 </span>
               </li>
               <li className="cf-info-item">

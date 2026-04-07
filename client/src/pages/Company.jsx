@@ -3,6 +3,7 @@ import Contact from '../components/Contact';
 import img from '../assets/img22.jpg';
 import mission from '../assets/MISSION.png';
 import companyVideo from '../assets/company.mp4';
+import vision from '../assets/vision.jpeg'
 const Company = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -472,7 +473,7 @@ const Company = () => {
           </div>
           <div className="cp-vision-img">
             <img
-              src={img}
+              src={vision}
               alt="Engineers with hard hats"
             />
           </div>

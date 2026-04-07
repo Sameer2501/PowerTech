@@ -13,6 +13,7 @@ const navLinks = [
       "Automatic Battery Charger",
       "On line UPS",
       "Isolation 3 Phase Transformer",
+      "Stepdown Transformer",
     ],
   },
   { label: "Company" },
@@ -30,6 +31,7 @@ const productLinkMap = {
   "Automatic Battery Charger": "battery-charger",
   "On line UPS": "online-ups",
   "Isolation 3 Phase Transformer": "isolation-3-phase-transformers",
+  "Stepdown Transformer": "step-down-transformer",
 };
 
 export default function Navbar() {
@@ -38,6 +40,7 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -167,7 +170,7 @@ export default function Navbar() {
           border-top: 3px solid var(--green-primary);
           border-radius: 6px;
           box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-          min-width: 200px;
+          min-width: 300px;
           opacity: 0;
           pointer-events: none;
           transition: all 0.22s ease;
@@ -192,6 +195,7 @@ export default function Navbar() {
           border-left: 3px solid transparent;
           transition: all 0.15s ease;
           cursor: pointer;
+          white-space: nowrap;
         }
 
         .spt-dropdown-item:hover {
@@ -506,11 +510,80 @@ export default function Navbar() {
 
         {/* SEARCH BAR */}
         <div className={`spt-search-bar${searchOpen ? " open" : ""}`}>
-          <svg style={{ width: 18, height: 18, stroke: "#aaa", fill: "none", strokeWidth: 2, flexShrink: 0 }} viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input type="text" placeholder="Search products, solutions..." autoFocus={searchOpen} />
-          <button>Search</button>
+          <div style={{ display: 'flex', alignItems: 'center', width: '100%', gap: '12px', position: 'relative' }}>
+            <svg style={{ width: 18, height: 18, stroke: "#aaa", fill: "none", strokeWidth: 2, flexShrink: 0 }} viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search products, solutions..."
+              autoFocus={searchOpen}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            {searchQuery.trim().length > 0 && (
+              <div className="spt-search-results" style={{
+                position: 'absolute',
+                top: 'calc(100% + 14px)',
+                left: 0,
+                width: '100%',
+                background: '#fff',
+                border: '1px solid rgba(26,122,26,0.15)',
+                boxShadow: '0 8px 30px rgba(0,0,0,0.1)',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                zIndex: 1000
+              }}>
+                {Object.keys(productLinkMap)
+                  .filter(item => item.toLowerCase().includes(searchQuery.toLowerCase()))
+                  .map(item => (
+                    <div
+                      key={item}
+                      onClick={() => {
+                        navigate(`/products/${productLinkMap[item]}`);
+                        setSearchOpen(false);
+                        setSearchQuery("");
+                      }}
+                      style={{
+                        padding: '12px 20px',
+                        cursor: 'pointer',
+                        fontFamily: "'Rajdhani', sans-serif",
+                        fontSize: '18px',
+                        fontWeight: 600,
+                        color: '#333',
+                        borderBottom: '1px solid rgba(0,0,0,0.05)',
+                        transition: 'background 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(26,122,26,0.06)';
+                        e.currentTarget.style.color = 'var(--green-primary)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.color = '#333';
+                      }}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                {Object.keys(productLinkMap).filter(item => item.toLowerCase().includes(searchQuery.toLowerCase())).length === 0 && (
+                  <div style={{ padding: '16px 20px', color: '#888', fontStyle: 'italic', fontFamily: "'Inter', sans-serif", fontSize: '15px' }}>
+                    No products found.
+                  </div>
+                )}
+              </div>
+            )}
+            <button onClick={() => {
+              if (searchQuery.trim().length > 0) {
+                const results = Object.keys(productLinkMap).filter(item => item.toLowerCase().includes(searchQuery.toLowerCase()));
+                if (results.length > 0) {
+                  navigate(`/products/${productLinkMap[results[0]]}`);
+                  setSearchOpen(false);
+                  setSearchQuery("");
+                }
+              }
+            }}>Search</button>
+          </div>
         </div>
 
         {/* MOBILE MENU */}
