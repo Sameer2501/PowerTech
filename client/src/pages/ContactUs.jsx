@@ -264,7 +264,7 @@ const ContactUs = () => {
       <div style={{ maxWidth: '1200px', margin: '100px auto', padding: '0 5%' }}>
         <div className="cu-map-wrap" style={{ margin: '0 auto' }}>
           <iframe
-            src="https://maps.google.com/maps?q=Plot%20195,%20Sector-24,%20Faridabad,%20Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3425.3663732264276!2d75.90182497558489!3d30.84841597452874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDUwJzU0LjMiTiA3NcKwNTQnMTUuOCJF!5e0!3m2!1sen!2sin!4v1775555713678!5m2!1sen!2sin"
             width="100%"
             height="400"
             style={{ border: 0 }}
