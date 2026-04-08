@@ -3,8 +3,11 @@ import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Contact from '../components/Contact';
-import img from '../assets/img22.jpg';
+// import img from '../assets/img22.jpg';
 import works from '../assets/work.jpeg';
+import temp from '../assets/temp.jpeg'
+import cnt from '../assets/cnt.avif'
+
 const ContactUs = () => {
   const form = useRef();
 
@@ -25,18 +28,18 @@ const ContactUs = () => {
     };
 
     emailjs.send(
-      'service_1jhgwor', 
-      'template_616u8sg', 
-      templateParams, 
+      'service_1jhgwor',
+      'template_616u8sg',
+      templateParams,
       'XOtL4BJzmb98AETMb'
     )
-    .then((result) => {
-      toast.update(loadToast, { render: "Message sent successfully! 🚀", type: "success", isLoading: false, autoClose: 5000 });
-      e.target.reset();
-    }, (error) => {
-      toast.update(loadToast, { render: "Failed to send: " + (error?.text || "Unknown error"), type: "error", isLoading: false, autoClose: 5000 });
-      console.error("EmailJS Error:", error);
-    });
+      .then((result) => {
+        toast.update(loadToast, { render: "Message sent successfully! 🚀", type: "success", isLoading: false, autoClose: 5000 });
+        e.target.reset();
+      }, (error) => {
+        toast.update(loadToast, { render: "Failed to send: " + (error?.text || "Unknown error"), type: "error", isLoading: false, autoClose: 5000 });
+        console.error("EmailJS Error:", error);
+      });
   };
 
   return (
@@ -251,7 +254,7 @@ const ContactUs = () => {
         {/* ── HERO BANNER ── */}
         <section className="cp-hero">
           <img
-            src={img}
+            src={cnt}
             alt="Contact Us Background"
           />
           <div className="cp-hero-title-box">
@@ -299,9 +302,9 @@ const ContactUs = () => {
       <section className="cu-info-sec">
         {/* Row 1 */}
         <div className="cu-info-row">
-          <div className="cu-info-title">Corporate Marketing</div>
+          <div className="cu-info-title">Our Company</div>
           <div className="cu-info-img">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="Corporate Office" />
+            <img src={temp} alt="Super Power Tech" />
           </div>
           <div className="cu-info-text">
             <h4>For Electricals:</h4>
@@ -309,10 +312,10 @@ const ContactUs = () => {
               <strong>Address:</strong> Plot No. 76, Karamjit Nagar, Satsang Ghar Road, Near Universal School, Lohara, Ludhiana-141016
             </p>
             <p>
-              <strong>Phone:</strong> +91-99109 93162, +91-129-4318001-05
+              <strong>Phone:</strong> +91 96535 24848, +91 93578 16285
             </p>
             <p>
-              <strong>Email:</strong> sales@superpowertech.in
+              <strong>Email:</strong> info.superpowertech@gmail.com
             </p>
           </div>
         </div>
@@ -329,7 +332,7 @@ const ContactUs = () => {
               <strong>Address:</strong> Plot No. 76, Karamjit Nagar, Satsang Ghar Road, Near Universal School, Lohara, Ludhiana-141016
             </p>
             <p>
-              <strong>Email:</strong> sales@superpowertech.in
+              <strong>Email:</strong> info.superpowertech@gmail.com
             </p>
           </div>
         </div>

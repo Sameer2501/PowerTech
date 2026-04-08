@@ -174,7 +174,17 @@ export default function Navbar() {
           opacity: 0;
           pointer-events: none;
           transition: all 0.22s ease;
-          overflow: hidden;
+          overflow: visible; /* Allowing the pseudo-element to extend */
+        }
+
+        .spt-dropdown::before {
+          content: '';
+          position: absolute;
+          top: -20px;
+          left: 0;
+          right: 0;
+          height: 20px;
+          background: transparent;
         }
 
         .spt-dropdown.open {
@@ -428,24 +438,31 @@ export default function Navbar() {
           {/* DESKTOP NAV */}
           <ul className="spt-nav-links">
             {navLinks.map((link) => (
-              <li key={link.label} className="spt-nav-item">
+              <li
+                key={link.label}
+                className="spt-nav-item"
+                onMouseEnter={() => link.dropdown && setDropdownOpen(true)}
+                onMouseLeave={() => link.dropdown && setDropdownOpen(false)}
+              >
                 {link.dropdown ? (
                   <>
-                    <button
+                    <div
                       className={`spt-nav-link${dropdownOpen ? " active" : ""}`}
-                      onClick={() => setDropdownOpen((o) => !o)}
-                      onBlur={() => setTimeout(() => setDropdownOpen(false), 150)}
+                      onClick={() => {
+                        navigate('/products');
+                        setDropdownOpen(false);
+                      }}
                     >
                       {link.label}
                       <svg className="chevron" viewBox="0 0 24 24">
                         <polyline points="6 9 12 15 18 9" />
                       </svg>
-                    </button>
+                    </div>
                     <div className={`spt-dropdown${dropdownOpen ? " open" : ""}`}>
                       {link.dropdown.map((item) => (
                         <a
                           key={item}
-                          href="#"
+                          href={`/products/${productLinkMap[item]}`}
                           className="spt-dropdown-item"
                           onClick={(e) => {
                             e.preventDefault();
@@ -463,7 +480,7 @@ export default function Navbar() {
                   </>
                 ) : (
                   <a
-                    href={link.label === "Company" ? "/company" : link.label === "Contact" ? "/contactus" : link.label === "Technology" ? "/technology" : link.label === "Career" ? "/career" : "#"}
+                    href={link.label === "Company" ? "/company" : link.label === "Contact" ? "/contactus" : link.label === "Technology" ? "/technology" : link.label === "Career" ? "/career" : link.label === "Events" ? "/events" : "#"}
                     className="spt-nav-link"
                     onClick={(e) => {
                       e.preventDefault();
@@ -478,6 +495,9 @@ export default function Navbar() {
                         window.scrollTo(0, 0);
                       } else if (link.label === "Career") {
                         navigate('/career');
+                        window.scrollTo(0, 0);
+                      } else if (link.label === "Events") {
+                        navigate('/events');
                         window.scrollTo(0, 0);
                       }
                     }}
@@ -604,6 +624,9 @@ export default function Navbar() {
                     setMobileMenuOpen(false);
                   } else if (link.label === "Career") {
                     navigate('/career');
+                    setMobileMenuOpen(false);
+                  } else if (link.label === "Events") {
+                    navigate('/events');
                     setMobileMenuOpen(false);
                   }
                 }}

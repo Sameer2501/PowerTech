@@ -331,9 +331,14 @@ export default function Home() {
         }
 
         @media (max-width:768px) {
-          .hw-body { padding:0 1.5rem; }
-          .hw-cards { flex-direction:column; bottom:0; }
-          .sc { width:100%; }
+          .hw-body { 
+            padding: 0 1.5rem; 
+          }
+          .hw-cards { 
+            display: none !important; 
+          }
+          .hw-h1 { font-size: 2.6rem; }
+          .hw-p { font-size: 1.05rem; }
         }
 
         /* ═══════════ PRODUCTS SECTION ═══════════ */
@@ -614,7 +619,6 @@ export default function Home() {
             className={`top${isOut ? " out" : ""}`}
           />
         </div>
-        clientL
         <div className="hw-ov" />
         <div className="hw-bfade" />
         <div className="hw-lbar" />
@@ -1166,7 +1170,7 @@ const clientLogos = [
   },
   {
     name: "Hero",
-    logo:cl4,
+    logo: cl4,
   },
 
   {

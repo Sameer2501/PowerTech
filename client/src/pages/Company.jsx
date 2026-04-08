@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Contact from '../components/Contact';
-import img from '../assets/img22.jpg';
-import mission from '../assets/MISSION.png';
+import ms from '../assets/mission.jpeg';
+
 import companyVideo from '../assets/company.mp4';
 import vision from '../assets/vision.jpeg'
+import energy from '../assets/energy.jpg'
 const Company = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -349,7 +350,7 @@ const Company = () => {
         {/* ── HERO BANNER ── */}
         <section className="cp-hero">
           <img
-            src={img}
+            src={energy}
             alt="Engineers working on electrical panel"
           />
           <div className="cp-hero-title-box">
@@ -401,27 +402,27 @@ const Company = () => {
           </div>
           <div className="cp-facts-grid">
             <div className="cp-fact-item">
-              <h3>6+</h3>
+              <h3>2+</h3>
               <p>Manufacturing Units</p>
             </div>
             <div className="cp-fact-item">
-              <h3>35+</h3>
+              <h3>7+</h3>
               <p>Countries Global Presence</p>
             </div>
             <div className="cp-fact-item">
-              <h3>58+</h3>
+              <h3>20+</h3>
               <p>years of Leadership</p>
             </div>
             <div className="cp-fact-item">
-              <h3>700+</h3>
+              <h3>60+</h3>
               <p>Experienced & Skilled Manpower</p>
             </div>
             <div className="cp-fact-item">
-              <h3>174+</h3>
+              <h3>10+</h3>
               <p>Sales & Service Centres</p>
             </div>
             <div className="cp-fact-item">
-              <h3>35000+</h3>
+              <h3>3000+</h3>
               <p>Installations across industry</p>
             </div>
           </div>
@@ -431,7 +432,7 @@ const Company = () => {
         <section className="cp-mission">
           <div className="cp-mission-img">
             <img
-              src={mission}
+              src={ms}
               alt="Electrical engineer working on site"
             />
           </div>

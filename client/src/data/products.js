@@ -35,9 +35,9 @@ export const products = [
         image: p2,
         description: "Our Unbalanced Servo Voltage Stabilizers are engineered to handle separate phases independently. Ideal for power environments where there are significant voltage imbalances, ensuring each phase receives targeted voltage correction."
       },
-      
+
       {
-        title: "Type: Air Cooled ",
+        title: "Type: Oil Cooled ",
         image: p4,
         description: `Designed for heavy-duty single-phase systems, utilizing oil cooling to efficiently handle high loads.
 

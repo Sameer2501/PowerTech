@@ -5,11 +5,11 @@ import Contact from '../components/Contact';
 import { products } from '../data/products';
 
 const Product = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <>
-            <style>{`
+  return (
+    <>
+      <style>{`
         /* Import fonts if not globally available */
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
@@ -110,41 +110,41 @@ const Product = () => {
         }
       `}</style>
 
-            <div className="pr-page">
-                {/* ── HERO BANNER ── */}
-                <section className="pr-hero">
-                    <img
-                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80"
-                        alt="Products Hero Background"
-                    />
-                    <div className="pr-hero-title-box">
-                        <h1>Products</h1>
-                    </div>
-                </section>
+      <div className="pr-page">
+        {/* ── HERO BANNER ── */}
+        <section className="pr-hero">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80"
+            alt="Products Hero Background"
+          />
+          <div className="pr-hero-title-box">
+            <h1>Products</h1>
+          </div>
+        </section>
 
-                {/* ── PRODUCTS GRID ── */}
-                <section className="pr-grid-wrap">
-                    <div className="pr-grid">
-                        {products.map((product) => (
-                            <div
-                                key={product.id}
-                                className="pr-card"
-                                onClick={() => {
-                                    navigate('/products/' + product.id);
-                                }}
-                            >
-                                <h2 className="pr-card-title">{product.title}</h2>
-                                <img src={product.image} alt={product.title} className="pr-card-img" />
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            </div>
+        {/* ── PRODUCTS GRID ── */}
+        <section className="pr-grid-wrap">
+          <div className="pr-grid">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="pr-card"
+                onClick={() => {
+                  navigate('/products/' + product.id);
+                }}
+              >
+                <h2 className="pr-card-title">{product.title}</h2>
+                <img src={product.image} alt={product.title} className="pr-card-img" />
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
 
-            {/* ───────────────── CONTACT / FOOTER ───────────────── */}
-            <Contact />
-        </>
-    );
+      {/* ───────────────── CONTACT / FOOTER ───────────────── */}
+      <Contact />
+    </>
+  );
 };
 
 export default Product;

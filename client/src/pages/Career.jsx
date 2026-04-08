@@ -2,13 +2,14 @@ import React from 'react';
 import Contact from '../components/Contact';
 import mm from '../assets/mm.avif'; // User requested this for the hero
 import life from '../assets/life.jpeg'
-import img from '../assets/img22.jpg';
-import img22 from '../assets/img22.jpg';
+// import img from '../assets/img22.jpg';
+// import img22 from '../assets/img22.jpg';
+import connect from '../assets/connect.jpg'
 // import img from '../assets/img22.jpg';
 const Career = () => {
-    return (
-        <>
-            <style>{`
+  return (
+    <>
+      <style>{`
         /* Import fonts if not globally available */
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
@@ -218,66 +219,66 @@ const Career = () => {
         }
       `}</style>
 
-            <div className="cp-page">
-                {/* ── HERO BANNER ── */}
-                <section className="cp-hero">
-                    <img
-                        src={mm}
-                        alt="Career Background"
-                    />
-                    <div className="cp-hero-title-box">
-                        <h1>Career</h1>
-                    </div>
-                </section>
+      <div className="cp-page">
+        {/* ── HERO BANNER ── */}
+        <section className="cp-hero">
+          <img
+            src={mm}
+            alt="Career Background"
+          />
+          <div className="cp-hero-title-box">
+            <h1>Career</h1>
+          </div>
+        </section>
+      </div>
+
+      {/* ── INTRO ── */}
+      <section className="cr-intro">
+        <h2>We are growing and we're looking for passionate people to help us innovate at every level.</h2>
+        <p>At Super Power Tech, we recognise talents, understanding the value that they bring to the organisation. We continually seek enthusiastic individuals who are keen to be a part of our growing business.</p>
+      </section>
+
+      {/* ── LIFE AT POWER TECH ── */}
+      <section className="cr-life-sec">
+        <img src={life} alt="Life at Power Tech" className="cr-life-img" />
+        <div className="cr-life-card">
+          <h2>Life At Super Power Tech</h2>
+          <p>Our core values to be a company of integrity and innovation is consistent throughout the business. If our values resonate strongly with you and you are equipped for the challenge, Kindly let us know what kind of work you're passionate about and we'll notify you when matching career opportunities become available.</p>
+        </div>
+      </section>
+
+      {/* ── FILL THE FORM ── */}
+      <section className="cr-form-sec">
+        <h2>Fill the Form</h2>
+        <div className="cr-form-wrap">
+          <div className="cr-form-img-box">
+            <img src={connect} alt="Construction Power Tech Worker" />
+          </div>
+
+          <form className="cr-tea-form">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="tel" placeholder="Phone" />
+
+            <div className="cr-file-group">
+              <label className="cr-file-btn">
+                Choose File
+                <input type="file" style={{ display: 'none' }} />
+              </label>
+              <span className="cr-file-text">No file chosen</span>
             </div>
 
-            {/* ── INTRO ── */}
-            <section className="cr-intro">
-                <h2>We are growing and we're looking for passionate people to help us innovate at every level.</h2>
-                <p>At Super Power Tech, we recognise talents, understanding the value that they bring to the organisation. We continually seek enthusiastic individuals who are keen to be a part of our growing business.</p>
-            </section>
+            <textarea placeholder="Message"></textarea>
 
-            {/* ── LIFE AT POWER TECH ── */}
-            <section className="cr-life-sec">
-                <img src={life} alt="Life at Power Tech" className="cr-life-img" />
-                <div className="cr-life-card">
-                    <h2>Life At Super Power Tech</h2>
-                    <p>Our core values to be a company of integrity and innovation is consistent throughout the business. If our values resonate strongly with you and you are equipped for the challenge, Kindly let us know what kind of work you're passionate about and we'll notify you when matching career opportunities become available.</p>
-                </div>
-            </section>
+            <button type="submit" className="cr-submit-btn" onClick={(e) => e.preventDefault()}>Submit</button>
+          </form>
+        </div>
+      </section>
 
-            {/* ── FILL THE FORM ── */}
-            <section className="cr-form-sec">
-                <h2>Fill the Form</h2>
-                <div className="cr-form-wrap">
-                    <div className="cr-form-img-box">
-                        <img src={img} alt="Construction Power Tech Worker" />
-                    </div>
-
-                    <form className="cr-tea-form">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="tel" placeholder="Phone" />
-
-                        <div className="cr-file-group">
-                            <label className="cr-file-btn">
-                                Choose File
-                                <input type="file" style={{ display: 'none' }} />
-                            </label>
-                            <span className="cr-file-text">No file chosen</span>
-                        </div>
-
-                        <textarea placeholder="Message"></textarea>
-
-                        <button type="submit" className="cr-submit-btn" onClick={(e) => e.preventDefault()}>Submit</button>
-                    </form>
-                </div>
-            </section>
-
-            {/* ───────────────── CONTACT / FOOTER ───────────────── */}
-            <Contact />
-        </>
-    );
+      {/* ───────────────── CONTACT / FOOTER ───────────────── */}
+      <Contact />
+    </>
+  );
 };
 
 export default Career;

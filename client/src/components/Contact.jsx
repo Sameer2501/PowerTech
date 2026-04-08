@@ -1,7 +1,47 @@
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
   const navigate = useNavigate();
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const loadToast = toast.loading("Sending your message...");
+
+    const product = form.current.product.value;
+    const userMessage = form.current.message.value;
+    const combinedMessage = product ? `Product Interest: ${product}\n\n${userMessage}` : userMessage;
+
+    const templateParams = {
+      name: form.current.from_name.value,
+      email: form.current.from_email.value,
+      from_email: form.current.from_email.value,
+      phone: form.current.phone.value,
+      message: combinedMessage,
+      time: new Date().toLocaleString(),
+      title: "New Website Inquiry"
+    };
+
+    emailjs.send(
+      'service_1jhgwor', 
+      'template_616u8sg', 
+      templateParams, 
+      'XOtL4BJzmb98AETMb'
+    )
+    .then((result) => {
+      toast.update(loadToast, { render: "Message sent successfully! 🚀", type: "success", isLoading: false, autoClose: 5000 });
+      e.target.reset();
+    }, (error) => {
+      toast.update(loadToast, { render: "Failed to send: " + (error?.text || "Unknown error"), type: "error", isLoading: false, autoClose: 5000 });
+      console.error("EmailJS Error:", error);
+    });
+  };
+
   return (
     <>
       <style>{`
@@ -434,26 +474,26 @@ export default function Contact() {
           </div>
 
           {/* RIGHT — contact form */}
-          <div className="cf-form-side">
+          <form className="cf-form-side" ref={form} onSubmit={sendEmail}>
             <h3 className="cf-form-title">Send Us a Message</h3>
             <p className="cf-form-sub">We typically respond within 24 hours on business days.</p>
 
             <div className="cf-form-row">
               <div className="cf-field">
                 <label htmlFor="cf-name">Full Name</label>
-                <input id="cf-name" type="text" placeholder="Enter Your Name" />
+                <input id="cf-name" name="from_name" type="text" placeholder="Enter Your Name" required />
               </div>
               <div className="cf-field">
                 <label htmlFor="cf-phone">Phone</label>
-                <input id="cf-phone" type="tel" placeholder="+91 98765 43210" />
+                <input id="cf-phone" name="phone" type="tel" placeholder="+91 98765 43210" />
               </div>
               <div className="cf-field">
                 <label htmlFor="cf-email">Email</label>
-                <input id="cf-email" type="email" placeholder="Enter Email" />
+                <input id="cf-email" name="from_email" type="email" placeholder="Enter Email" required />
               </div>
               <div className="cf-field">
                 <label htmlFor="cf-product">Product Interest</label>
-                <select id="cf-product">
+                <select id="cf-product" name="product">
                   <option value="">Select a product…</option>
                   <option>Servo Voltage Stablizers</option>
                   <option>HT Transformer</option>
@@ -467,11 +507,11 @@ export default function Contact() {
               </div>
               <div className="cf-field full">
                 <label htmlFor="cf-msg">Message</label>
-                <textarea id="cf-msg" placeholder="Tell us about your requirements…" />
+                <textarea id="cf-msg" name="message" placeholder="Tell us about your requirements…" required />
               </div>
             </div>
 
-            <button className="cf-submit-btn">
+            <button type="submit" className="cf-submit-btn">
               Send Message
               <span className="cf-arr">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
@@ -479,7 +519,7 @@ export default function Contact() {
                 </svg>
               </span>
             </button>
-          </div>
+          </form>
         </div>
 
         {/* ── LINKS GRID ── */}
@@ -597,6 +637,7 @@ export default function Contact() {
           </div>
         </div>
 
+        <ToastContainer position="top-right" theme="dark" />
       </footer>
     </>
   );
