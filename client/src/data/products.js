@@ -13,6 +13,7 @@ import sdt from '../assets/sdt.jpeg';
 import olu from '../assets/olu.jpeg';
 import ipt from '../assets/ipt.jpeg';
 import abc from '../assets/abc.png'
+import oil from '../assets/oil.jpeg';
 export const products = [
   {
     id: 'voltage-stabilizers',
@@ -239,6 +240,25 @@ Applications
       { id: 2, title: 'Enhanced Safety', desc: 'Prevents electric shocks by isolating the load from earth ground.' },
       { id: 3, title: 'Equipment Longevity', desc: 'Shields medical, CNC, and IT equipment from transients.' },
       { id: 4, title: 'Clean Power Ground', desc: 'Establishes a new, clean neutral-ground bond.' }
+    ]
+  },
+  {
+    id: 'transformer-oil',
+    title: 'Transformer Oil',
+    image: oil,
+    description: "Transformer Oil is a high-performance insulating oil designed for use in electrical transformers, switchgear, and other high-voltage equipment. It provides excellent electrical insulation and efficient heat dissipation, ensuring reliable operation and extended equipment life.",
+    features: [
+      "High dielectric strength for better insulation",
+      "Excellent thermal conductivity (heat cooling capability)",
+      "Low viscosity for smooth circulation",
+      "Oxidation resistant for longer life",
+      "Moisture resistant and contamination free"
+    ],
+    keyBenefits: [
+      { id: 1, title: 'Efficient Cooling', desc: 'Helps in maintaining optimal temperature inside transformers.' },
+      { id: 2, title: 'Electrical Insulation', desc: 'Prevents short circuits and electrical failures.' },
+      { id: 3, title: 'Long Equipment Life', desc: 'Reduces wear and tear, increasing transformer lifespan.' },
+      { id: 4, title: 'Reliable Performance', desc: 'Ensures stable and safe transformer operation.' }
     ]
   }
 ];

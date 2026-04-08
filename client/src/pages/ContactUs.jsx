@@ -312,7 +312,8 @@ const ContactUs = () => {
               <strong>Address:</strong> Plot No. 76, Karamjit Nagar, Satsang Ghar Road, Near Universal School, Lohara, Ludhiana-141016
             </p>
             <p>
-              <strong>Phone:</strong> +91 96535 24848, +91 93578 16285
+              <strong>Phone:</strong> +91 96535 24848
+              <p>+91 93578 16285</p>
             </p>
             <p>
               <strong>Email:</strong> info.superpowertech@gmail.com
