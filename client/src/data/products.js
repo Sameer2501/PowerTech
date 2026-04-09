@@ -14,6 +14,8 @@ import olu from '../assets/olu.jpeg';
 import ipt from '../assets/ipt.jpeg';
 import abc from '../assets/abc.png'
 import oil from '../assets/oil.jpeg';
+import slide1 from '../assets/slide1.png';
+import slide2 from '../assets/slide2.jpeg';
 export const products = [
   {
     id: 'voltage-stabilizers',
@@ -24,6 +26,7 @@ export const products = [
       {
         title: "Type: Oil Cooled Linear type",
         image: p3,
+        images: [p3, slide1, slide2],
         description: "The Air-Cooled Voltage Stabilizers offer excellent heat dissipation without the need for liquid coolants. Designed perfectly for indoor setups and cleaner industrial environments with efficient air convection systems."
       },
       {

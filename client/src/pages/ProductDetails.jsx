@@ -11,11 +11,28 @@ const ProductDetails = () => {
     const product = products.find(p => p.id === id);
 
     const [activeSubTypeIndex, setActiveSubTypeIndex] = useState(0);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
         setActiveSubTypeIndex(0);
+        setCurrentSlideIndex(0);
     }, [id]);
+
+    useEffect(() => {
+        setCurrentSlideIndex(0);
+    }, [activeSubTypeIndex]);
+
+    const activeSubType = product.subTypes ? product.subTypes[activeSubTypeIndex] : null;
+    const currentImages = activeSubType && activeSubType.images ? activeSubType.images : (activeSubType ? [activeSubType.image] : [product.image]);
+
+    const nextSlide = () => {
+        setCurrentSlideIndex((prev) => (prev + 1) % currentImages.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlideIndex((prev) => (prev - 1 + currentImages.length) % currentImages.length);
+    };
 
     if (!product) {
         return (
@@ -82,11 +99,66 @@ const ProductDetails = () => {
           align-items: center;
           justify-content: center;
           height: 500px;
+          position: relative;
+          /* Removed overflow: hidden to allow buttons to breathe */
         }
         .pd-main-img-box img {
           width: 100%;
           height: 100%;
           object-fit: contain;
+          transition: opacity 0.3s ease;
+        }
+        .pd-slider-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.8);
+          color: #1a7a1a;
+          border: 1px solid #eee;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .pd-slider-btn:hover {
+          background: #1a7a1a;
+          color: white;
+          border-color: #1a7a1a;
+          transform: translateY(-50%) scale(1.1);
+        }
+        .pd-slider-btn.prev { left: -18px; }
+        .pd-slider-btn.next { right: -18px; }
+
+        @media (max-width: 600px) {
+          .pd-slider-btn.prev { left: 5px; }
+          .pd-slider-btn.next { right: 5px; }
+        }
+
+        .pd-slider-dots {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 8px;
+          z-index: 10;
+        }
+        .pd-slider-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: rgba(0,0,0,0.2);
+          cursor: pointer;
+          border: 1px solid white;
+        }
+        .pd-slider-dot.active {
+          background: #1a7a1a;
         }
         .pd-thumb-box {
           width: 80px;
@@ -278,7 +350,30 @@ const ProductDetails = () => {
                 <section className="pd-main-wrap">
                     <div className="pd-left-col">
                         <div className="pd-main-img-box">
-                            <img src={product.subTypes ? product.subTypes[activeSubTypeIndex].image : product.image} alt={product.title} />
+                            {currentImages.length > 1 && (
+                                <>
+                                    <button className="pd-slider-btn prev" onClick={prevSlide}>
+                                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" strokeWidth="2">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg>
+                                    </button>
+                                    <button className="pd-slider-btn next" onClick={nextSlide}>
+                                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" strokeWidth="2">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </button>
+                                    <div className="pd-slider-dots">
+                                        {currentImages.map((_, idx) => (
+                                            <div 
+                                                key={idx} 
+                                                className={`pd-slider-dot ${currentSlideIndex === idx ? 'active' : ''}`}
+                                                onClick={() => setCurrentSlideIndex(idx)}
+                                            />
+                                        ))}
+                                    </div>
+                                </>
+                            )}
+                            <img src={currentImages[currentSlideIndex]} alt={product.title} />
                         </div>
                         {product.subTypes ? (
                             <div className="pd-thumbnails-container">
