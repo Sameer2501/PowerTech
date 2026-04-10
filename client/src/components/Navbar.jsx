@@ -6,7 +6,7 @@ const navLinks = [
   {
     label: "Products",
     dropdown: [
-      "Servo Voltage Stablizers",
+      "Servo Voltage Stabilizer",
       "HT Transformer",
       "Control Panel",
       "Electroplating Rectifier",
@@ -24,7 +24,7 @@ const navLinks = [
 ];
 
 const productLinkMap = {
-  "Servo Voltage Stablizers": "voltage-stabilizers",
+  "Servo Voltage Stabilizer": "voltage-stabilizers",
   "HT Transformer": "ht-transformers",
   "Control Panel": "control-panels",
   "Electroplating Rectifier": "electroplating-rectifiers",

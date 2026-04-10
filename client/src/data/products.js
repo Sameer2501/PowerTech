@@ -12,10 +12,11 @@ import cp3 from '../assets/cp3.png';
 import sdt from '../assets/sdt.jpeg';
 import olu from '../assets/olu.jpeg';
 import ipt from '../assets/ipt.jpeg';
-import abc from '../assets/abc.png'
+import abc from '../assets/abc.png';
 import oil from '../assets/oil.jpeg';
 import slide1 from '../assets/slide1.png';
 import slide2 from '../assets/slide2.jpeg';
+import newImg from '../assets/new.png';
 export const products = [
   {
     id: 'voltage-stabilizers',
@@ -55,10 +56,15 @@ Applications
 • Heavy machinery & industrial equipment
 • Stabilizing critical medical devices
 • Large commercial setups & rural areas`
-      }
-    ],
-    features: [
-      "Available in air-cooled, dry-type, single-phase, and three-phase systems",
+      },
+      {
+        title: "Type : Oil Cooled Servo Voltage Stabilizer",
+        image: newImg,
+        description: `The Ultimate Power Guard for Your Home. Protect your expensive appliances with the Super Power Tech (SPT) Oil-Cooled Servo Stabilizer. 
+        
+• Efficient Oil Cooling: Uses high-grade oil to prevent overheating, ensuring long-lasting performance even under heavy load conditions.
+• Smart Monitoring: Integrated digital meters allow real-time tracking of input and output voltage.`}],
+    features: ["Available in air-cooled, dry-type, single-phase, and three-phase systems",
       "Advanced mechanical and electrical engineering processes",
       "Suitable for all types of power factor loads ensuring minimal losses",
       "Supports natural air cooling, forced air cooling, and oil cooling",
