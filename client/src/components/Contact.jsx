@@ -84,14 +84,18 @@ export default function Contact() {
           position: relative;
           min-height: 380px;
           overflow: hidden;
+          display: flex;
         }
         .cf-hero-img img {
+          position: absolute;
+          inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
           display: block;
           filter: brightness(0.45) saturate(0.7);
           transition: transform 6s ease;
+          z-index: 0;
         }
         .cf-hero-img:hover img {
           transform: scale(1.04);
@@ -100,13 +104,15 @@ export default function Contact() {
           position: absolute;
           inset: 0;
           background: linear-gradient(135deg, rgba(26,122,26,0.55) 0%, rgba(0,0,0,0.30) 100%);
+          z-index: 1;
         }
         .cf-hero-img-content {
-          position: absolute;
-          inset: 0;
+          position: relative;
+          z-index: 2;
+          width: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: center;
           padding: 52px 48px;
         }
         .cf-hero-tag {
@@ -144,6 +150,7 @@ export default function Contact() {
           align-items: center;
           gap: 12px;
           margin-top: 28px;
+          flex-wrap: wrap;
         }
         .cf-social-label {
           font-size: 12px;
@@ -166,6 +173,7 @@ export default function Contact() {
           color: rgba(255,255,255,0.7);
           transition: border-color 0.25s, background 0.25s, color 0.25s;
           text-decoration: none;
+          flex-shrink: 0;
         }
         .cf-social-btn:hover {
           border-color: #2ecc2e;
@@ -376,7 +384,7 @@ export default function Contact() {
           color: #2ecc2e;
         }
         .cf-info-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; }
-        .cf-info-text { font-size: 15px; color: rgba(255,255,255,0.48); line-height: 1.6; }
+        .cf-info-text { font-size: 15px; color: rgba(255,255,255,0.48); line-height: 1.6; word-break: break-word; }
         .cf-info-text strong { display: block; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 3px; }
 
         /* ── BOTTOM BAR ── */
